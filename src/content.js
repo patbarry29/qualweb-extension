@@ -13,7 +13,11 @@ function starEvaluation() {
 
 function evaluateACT() {
   let actResult, result;
+  const includedRules = [
+    'QW-ACT-R1', 'QW-ACT-R2', 'QW-ACT-R3', 'QW-ACT-R4', 'QW-ACT-R5', 'QW-ACT-R6', 'QW-ACT-R7', 'QW-ACT-R8'
+  ];
   window.act = new ACTRules({ translate: locale_en, fallback: locale_en });
+  window.act.configure({ rules: includedRules })
   //window.act.validateFirstFocusableElementIsLinkToNonRepeatedContent();
   window.act.executeAtomicRules();
   window.act.executeCompositeRules();
